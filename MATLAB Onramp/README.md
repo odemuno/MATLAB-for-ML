@@ -91,7 +91,7 @@ t = t/fs
 plot(t,y)
 ```
 
-![audio](audio1.jpg)
+![audio](audio1.JPG)
 
 > In the plot, notice that y is periodic, but it's not a simple sine wave. It's made up of multiple sine waves with different frequencies.
 
@@ -110,7 +110,7 @@ f = f*(fs/n)
 plot(f, yfft)
 xlim([0 1000])
 ```
-![audio](audio2.jpg)
+![audio](audio2.JPG)
 
 > The first three spikes are notes of the middle C chord. The 6 spikes correspond to the fundamental frequencies of a middle C chord. E.g the C4 note has a frequency of 261.6 Hz
 
