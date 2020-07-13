@@ -18,7 +18,7 @@ Plot the electricity usage data for the residential, commercial, and industrial 
 ### Code
 
 Load the MAT-file into MATLAB and use **usage** display the matrix
-```bash
+```
 load electricity
 usage
 ```
@@ -90,8 +90,7 @@ Use the sampling frequency *fs* to convert the vector to time in seconds
 t = t/fs
 plot(t,y)
 ```
-
-![audio](Audio1.JPG)
+![audio1](Audio1.JPG)
 
 > In the plot, notice that y is periodic, but it's not a simple sine wave. It's made up of multiple sine waves with different frequencies.
 
