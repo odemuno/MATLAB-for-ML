@@ -51,6 +51,7 @@ hold off
 title("July Electricity Usage")
 legend("res","comm","ind")
 ```
+
 ![Plot](ElectricityUse.JPG)
 
 From the plot, the residential sector uses the most electricity over time.
@@ -90,6 +91,7 @@ Use the sampling frequency *fs* to convert the vector to time in seconds
 t = t/fs
 plot(t,y)
 ```
+
 ![audio1](Audio.JPG)
 
 > In the plot, notice that y is periodic, but it's not a simple sine wave. It's made up of multiple sine waves with different frequencies.
@@ -109,6 +111,7 @@ f = f*(fs/n)
 plot(f, yfft)
 xlim([0 1000])
 ```
+
 ![audio](AudioFrequency.JPG)
 
 > The first three spikes are notes of the middle C chord. The 6 spikes correspond to the fundamental frequencies of a middle C chord. E.g the C4 note has a frequency of 261.6 Hz
@@ -117,10 +120,8 @@ xlim([0 1000])
 
 ### Context
 Use a diffraction grating to split a beam of light into individual wavelengths. Measuring the intensity of light observed at each wavelength gives the stars "characteristic spectrums."
-![star](StellarMotion.JPG)
 
-Star spectrum blue toward
-red away long
+![star](StellarMotion.JPG)
 
 ### Description
 In this project, you will find the observed wavelength of the hydrogen-alpha line of the HD94028 star.
@@ -137,7 +138,7 @@ lambdaStart = 630.02
 lambdaDelta = 0.14
 ```
 
-Find the wavelength using delta as the steps
+Find the wavelength using delta as the steps:
 ```
 lambdaEnd = lambdaStart + (nObs - 1)*lambdaDelta
 lambda = (lambdaStart:lambdaDelta:lambdaEnd)'
