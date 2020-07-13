@@ -51,7 +51,7 @@ hold off
 title("July Electricity Usage")
 legend("res","comm","ind")
 ```
-![Plot](ElectricityUsage.JPG)
+![Plot](ElectricityUse.JPG)
 
 From the plot, the residential sector uses the most electricity over time.
 
@@ -90,7 +90,7 @@ Use the sampling frequency *fs* to convert the vector to time in seconds
 t = t/fs
 plot(t,y)
 ```
-![audio1](Audio1.JPG)
+![audio1](Audio.JPG)
 
 > In the plot, notice that y is periodic, but it's not a simple sine wave. It's made up of multiple sine waves with different frequencies.
 
@@ -109,7 +109,7 @@ f = f*(fs/n)
 plot(f, yfft)
 xlim([0 1000])
 ```
-![audio](Audio2.JPG)
+![audio](AudioFrequency.JPG)
 
 > The first three spikes are notes of the middle C chord. The 6 spikes correspond to the fundamental frequencies of a middle C chord. E.g the C4 note has a frequency of 261.6 Hz
 
