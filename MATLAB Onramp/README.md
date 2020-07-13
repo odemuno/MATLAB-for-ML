@@ -19,12 +19,12 @@ Plot the electricity usage data for the residential, commercial, and industrial 
 
 Load the MAT-file into MATLAB and use **usage** display the matrix
 ```bash
-load electricity.mat 
+load electricity
 usage
 ```
 
 The first column is the data for electricity usage in residential areas. Store that info in a variable called *res*. The second column is commercial, while the third is industrial; store those volumns as vectors in the variables *comm* and *ind* respectively.
-```bash
+```
 res = usage(:,1)
 comm = usage(:,2)
 ind = usage(:,3)
@@ -69,6 +69,49 @@ Signals (especially audio) are core to Electrical Engineering. This takes severa
 Audio signals comprise of different frequencies. Often times, we have to tune it to get the frequency we need.
 
 ### Description
-> When a signal consists of two frequencies close together, they can cause the signal to appeear to have a 'beat' - a pulse pattern in the amplitude. In this project, you will create a signal with this beat phenomenon and analyzethe signal's frequency content.
+> Audio signals are usually comprised of many different frequencies. For example, in music, the note 'middle C' has a fundamental frequency of 261.6 Hz, and most music consists of several notes (or frequencies) being played at the same time. In this project, you will analyze the frequency content of an organ playing the C chord.
+
+### Code
+#### Time vector *t* for signal *y*
+Load the *Cchord.mat* file, which contins two variables:
+- *y*: signal from recording
+- *fs*: sampling frequency
+```
+load Cchord
+```
+
+Create variable *n* that contains the number of elements in y. Then use *n* to create evenly-spaced vector *t* from 0 to n-1, spaced by 1.
+```
+n = numel(y)
+t = 0:n-1
+```
+Use the sampling frequency *fs* to convert the vector to time in seconds
+```
+t = t/fs
+plot(t,y)
+```
+
+![audio](audio1.jpg)
+
+> In the plot, notice that y is periodic, but it's not a simple sine wave. It's made up of multiple sine waves with different frequencies.
+
+> A Fourier transform will return information about the frequency content of the signal. The location of the dominant frequencies will show what notes are contained in the chord.
+
+#### Frequency vector *f* for FFT vector *yfft*
+Create variable *yfft* that contains the absolute value of the discrete Fourier transform of *y* and evenly-space vector *f* from 0 to n-1, spaced by 1.
+
+```
+yfft = abs(fft(y))
+f = 0:n-1
+```
+Convert vector *f* to frequencies and plot the graph
+```
+f = f*(fs/n)
+plot(f, yfft)
+xlim([0 1000])
+```
+![audio](audio2.jpg)
+
+> The first three spikes are notes of the middle C chord. The 6 spikes correspond to the fundamental frequencies of a middle C chord. E.g the C4 note has a frequency of 261.6 Hz
 
 ## Project 3 - Stellar Motion
