@@ -115,3 +115,52 @@ xlim([0 1000])
 > The first three spikes are notes of the middle C chord. The 6 spikes correspond to the fundamental frequencies of a middle C chord. E.g the C4 note has a frequency of 261.6 Hz
 
 ## Project 3 - Stellar Motion
+
+### Context
+Use a diffraction grating to split a beam of light into individual wavelengths. Measuring the intensity of light observed at each wavelength gives the stars "characteristic spectrums."
+![star](stellar_motion.JPG)
+
+Star spectrum blue toward
+red away long
+
+### Description
+In this project, you will find the observed wavelength of the hydrogen-alpha line of the HD94028 star.
+
+![alpha_line](alpha_line.JPG)
+
+### Code
+The spectra data is at evenly-spaced wavelengths.
+
+```
+load starData
+nObs = size(spectra,1)
+lambdaStart = 630.02
+lambdaDelta = 0.14
+```
+
+Find the wavelength using delta as the steps
+```
+lambdaEnd = lambdaStart + (nObs - 1)*lambdaDelta
+lambda = (lambdaStart:lambdaDelta:lambdaEnd)'
+```
+Each column of spectra is the spectrum of a different star. The sixth column is the spectrum of star HD 94028.
+```
+s = spectra(:, 6)
+loglog(lambda, s,".-")
+xlabel("Wavelength")
+ylabel("Intensity")
+```
+
+#### Find the hydrogen-alpha line
+>Create two variables, *sHa* and *idx* that contain the minimum value of *s* and the index where the minimum value occurred. Use *idx* to index into lambda to find the wavelength of the Hydrogen-alpha line. Store the result as *lambdaHa*. The line (*lambdaHa*,*sHa*) is the location of the Hydrogen-alpha line.
+
+```
+[sHa, idx] = min(s)
+lambdaHa = lambda(idx)
+hold on
+loglog(lambdaHa, sHa, "rs", "MarkerSize",8)
+```
+
+![alpha_line](alpha_line_location.JPG)
+
+From the plot, the wavelength of the hydrogen-alpha line is approximately at 656.1nm.
