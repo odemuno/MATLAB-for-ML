@@ -7,9 +7,9 @@ I am currently on week 2 of the [Machine Learning course](https://www.coursera.o
 I have previously used MATLAB for a linear algebra course at UCSD ([MATH 18 MATLAB](https://www.math.ucsd.edu/~math18/)), so I decided to just refresh my memory by completing this learning module.
 
 Project topics:
-- Electricity Usage
-- Audio Frequency
-- Stellar Motion
+1. Electricity Usage
+2. Audio Frequency
+3. Stellar Motion
 
 ## Project 1 - Electricity usage
 ### Description
@@ -163,3 +163,6 @@ loglog(lambdaHa, sHa, "rs", "MarkerSize",8)
 ![alpha_line](AlphaLineLocation.JPG)
 
 From the plot, the wavelength of the hydrogen-alpha line is approximately at 656.1nm.
+
+## Project Completion
+![finish](OnrampCompletionCertificate.JPG)
