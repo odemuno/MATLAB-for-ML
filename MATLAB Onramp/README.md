@@ -51,7 +51,7 @@ hold off
 title("July Electricity Usage")
 legend("res","comm","ind")
 ```
-![Plot](electricityusage.JPG)
+![Plot](ElectricityUsage.JPG)
 
 From the plot, the residential sector uses the most electricity over time.
 
@@ -91,7 +91,7 @@ t = t/fs
 plot(t,y)
 ```
 
-![audio](audio1.JPG)
+![audio](Audio1.JPG)
 
 > In the plot, notice that y is periodic, but it's not a simple sine wave. It's made up of multiple sine waves with different frequencies.
 
@@ -110,7 +110,7 @@ f = f*(fs/n)
 plot(f, yfft)
 xlim([0 1000])
 ```
-![audio](audio2.JPG)
+![audio](Audio2.JPG)
 
 > The first three spikes are notes of the middle C chord. The 6 spikes correspond to the fundamental frequencies of a middle C chord. E.g the C4 note has a frequency of 261.6 Hz
 
@@ -118,7 +118,7 @@ xlim([0 1000])
 
 ### Context
 Use a diffraction grating to split a beam of light into individual wavelengths. Measuring the intensity of light observed at each wavelength gives the stars "characteristic spectrums."
-![star](stellar_motion.JPG)
+![star](StellarMotion.JPG)
 
 Star spectrum blue toward
 red away long
@@ -126,7 +126,7 @@ red away long
 ### Description
 In this project, you will find the observed wavelength of the hydrogen-alpha line of the HD94028 star.
 
-![alpha_line](alpha_line.JPG)
+![alpha_line](AlphaLine.JPG)
 
 ### Code
 The spectra data is at evenly-spaced wavelengths.
@@ -161,6 +161,6 @@ hold on
 loglog(lambdaHa, sHa, "rs", "MarkerSize",8)
 ```
 
-![alpha_line](alpha_line_location.JPG)
+![alpha_line](AlphaLineLocation.JPG)
 
 From the plot, the wavelength of the hydrogen-alpha line is approximately at 656.1nm.
