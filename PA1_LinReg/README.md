@@ -32,7 +32,7 @@ This assignment covers topics on:
 
 ## Basic Function
 
-Complete warmUpExercie.m
+Complete warmUpExercise.m
 - Make a 5X5 identity matrix
 ```
 A = eye(5);
@@ -57,6 +57,18 @@ You'd like to use the given data to help you select which city to expand to next
 
 
 ### Plotting the Data
+The dataset is gotten from the `ex1data1.txt` file.
+
+To visualize, these are the first 6 dataset points:
+```
+6.1101,17.592
+5.5277,9.1302
+8.5186,13.662
+7.0032,11.854
+5.8598,6.8233
+8.3829,11.886
+```
+
 ```
 plot(x, y, 'rx', 'MarkerSize', 10);   % Plot the data
 xlabel('Population of City in 10,000s');  % The x-axis label
@@ -66,19 +78,21 @@ ylabel('Profit in $10,000s');    % The y-axis label
 
 ### Gradient Descent
 The objective of linear regression is to minimize the cost function:
+
 ![Plot](cost_function_equation.JPG)
 
 In batch gradient descent, each iteration updates using this equation:
+
 ![Plot](GD_iteration_equation.JPG)
 
-This data is already setup for linear regression:
+This data is already setup for linear regression
 ```
 X = [ones(m, 1), data(:,1)]; % Add a column of ones to x
 theta = zeros(2, 1); % initialize fitting parameters
 iterations = 1500;
 alpha = 0.01;
 ```
-I edited the cost function code:
+I edited the cost function code
 ```
 function J = computeCost(X, y, theta)
 %COMPUTECOST Compute cost for linear regression
@@ -105,13 +119,13 @@ J = 1/(2*m) * sum(sqrErrors);
 end
 ```
 
-Testing the cost function:
+Testing the cost function J(θ) by completing the code in the `computeCost.m` file.
 ```
 J = computeCost(X, y, theta);
 J = computeCost(X, y, [-1 ; 2]);
 ```
 
-Results:
+Results
 ```
 Testing the cost function ...
 With theta = [0 ; 0]
@@ -122,4 +136,14 @@ With theta = [-1 ; 2]
 Cost computed = 54.242455
 Expected cost value (approx) 54.24
 ```
+Running Gradient Descent by implementing the `gradientDescent.m` file which calls `computeCost` on every iteration. The final parameters are used to plot the linear fit (the blue line).
 
+![Plot](population_lin_fit.JPG)
+
+Using this fit, we can predict profit values for population sizes of 35,000 and 70,000
+```
+For population = 35,000, we predict a profit of 4519.767868
+For population = 70,000, we predict a profit of 45342.450129
+```
+
+### Visualizing J(θ)
