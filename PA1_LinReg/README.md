@@ -30,7 +30,7 @@ This assignment covers topics on:
 
 *[O] indicates optional exercises
 
-## Basic Function
+## 1: Basic Function
 
 Complete warmUpExercise.m
 - Make a 5X5 identity matrix
@@ -50,13 +50,11 @@ ans =
      0     0     0     0     1
 ```
 
-## Linear Regression with One Variable
+## 2: Plotting
 Suppose you are the CEO of restaurant franchise and are considering different cities for opning a new branch.
 
 You'd like to use the given data to help you select which city to expand to next.
 
-
-### Plotting the Data
 The dataset is gotten from the `ex1data1.txt` file.
 
 To visualize, these are the first 6 dataset points:
@@ -76,7 +74,7 @@ ylabel('Profit in $10,000s');    % The y-axis label
 ```
 ![Plot](population.JPG)
 
-### Gradient Descent
+## 3: Cost and Gradient descent
 The objective of linear regression is to minimize the cost function:
 
 ![Plot](cost_function_equation.JPG)
@@ -146,4 +144,49 @@ For population = 35,000, we predict a profit of 4519.767868
 For population = 70,000, we predict a profit of 45342.450129
 ```
 
-### Visualizing J(θ)
+## 4: Visualizing J(θ_0, θ_1)
+Using the `ex1.m` file -- the information needed to create the plots were given.
+
+- plot the cost over a 2D grid of θ_0 and θ_1 values
+- uses the `computeCost` function to calculate J(θ) over a grid of values
+```
+% Grid over which we will calculate J
+theta0_vals = linspace(-10, 10, 100);
+theta1_vals = linspace(-1, 4, 100);
+
+% initialize J_vals to a matrix of 0's
+J_vals = zeros(length(theta0_vals), length(theta1_vals));
+
+% Fill out J_vals
+for i = 1:length(theta0_vals)
+    for j = 1:length(theta1_vals)
+	  t = [theta0_vals(i); theta1_vals(j)];
+	  J_vals(i,j) = computeCost(X, y, t);
+    end
+end
+```
+The values are used to produce a surface and contour plot:
+#### Surface Plot
+```
+figure;
+surf(theta0_vals, theta1_vals, J_vals)
+xlabel('\theta_0'); ylabel('\theta_1');
+```
+
+![plot](surface_plot.JPG)
+#### Contour Plot
+```
+figure;
+% Plot J_vals as 15 contours spaced logarithmically between 0.01 and 100
+contour(theta0_vals, theta1_vals, J_vals, logspace(-2, 3, 20))
+xlabel('\theta_0'); ylabel('\theta_1');
+hold on;
+plot(theta(1), theta(2), 'rx', 'MarkerSize', 10, 'LineWidth', 2);
+```
+![PLOT](contour_plot.JPG)
+
+> The purpose of these graphs is to show you that how J(θ) varies with
+changes in θ0 and θ1. The cost function J(θ) is bowl-shaped and has a global
+mininum. (This is easier to see in the contour plot than in the 3D surface
+plot). This minimum is the optimal point for θ0 and θ1, and each step of
+gradient descent moves closer to this point.
