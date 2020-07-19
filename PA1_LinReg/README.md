@@ -15,20 +15,14 @@ This assignment covers topics on:
 
 ### Provided Files
 - ex1.m - Octave/MATLAB script that steps you through the exercise
-- ex1 multi.m - Octave/MATLAB script for the later parts of the exercise
+the exercise
 - ex1data1.txt - Dataset for linear regression with one variable
-- ex1data2.txt - Dataset for linear regression with multiple variables
 - submit.m - Submission script that sends your solutions to our servers
 - warmUpExercise.m - Simple example function in Octave/MATLAB
 - plotData.m - Function to display the dataset
 - computeCost.m - Function to compute the cost of linear regression
 - gradientDescent.m - Function to run gradient descent
-- [O] computeCostMulti.m - Cost function for multiple variables
-- [O] gradientDescentMulti.m - Gradient descent for multiple variables
-- [O] featureNormalize.m - Function to normalize features
-- [O] normalEqn.m - Function to compute the normal equations
 
-*[O] indicates optional exercises
 
 ## 1: Basic Function
 
@@ -190,3 +184,23 @@ changes in θ0 and θ1. The cost function J(θ) is bowl-shaped and has a global
 mininum. (This is easier to see in the contour plot than in the 3D surface
 plot). This minimum is the optimal point for θ0 and θ1, and each step of
 gradient descent moves closer to this point.
+
+## My Submission Confirmation
+Run the `submit` function to connect to the `submit.m` file.
+```
+== Submitting solutions | Linear Regression with Multiple Variables...
+Login (email address): *my_email_address*
+Token: *my_token_number*
+== 
+==                                   Part Name |     Score | Feedback
+==                                   --------- |     ----- | --------
+==                            Warm-up Exercise |  10 /  10 | Nice work!
+==           Computing Cost (for One Variable) |  40 /  40 | Nice work!
+==         Gradient Descent (for One Variable) |  50 /  50 | Nice work!
+==                       Feature Normalization |   0 /   0 | 
+==     Computing Cost (for Multiple Variables) |   0 /   0 | 
+==   Gradient Descent (for Multiple Variables) |   0 /   0 | 
+==                            Normal Equations |   0 /   0 | 
+==                                   --------------------------------
+==                                             | 100 / 100 | 
+```
