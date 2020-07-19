@@ -72,16 +72,16 @@ plot(x, y, 'rx', 'MarkerSize', 10);   % Plot the data
 xlabel('Population of City in 10,000s');  % The x-axis label
 ylabel('Profit in $10,000s');    % The y-axis label
 ```
-![Plot](population.JPG)
+![Plot](1_population.JPG)
 
 ## 3: Cost and Gradient descent
 The objective of linear regression is to minimize the cost function:
 
-![Plot](cost_function_equation.JPG)
+![Plot](2_cost_function_equation.JPG)
 
 In batch gradient descent, each iteration updates using this equation:
 
-![Plot](GD_iteration_equation.JPG)
+![Plot](3_GD_iteration_equation.JPG)
 
 This data is already setup for linear regression
 ```
@@ -136,7 +136,7 @@ Expected cost value (approx) 54.24
 ```
 Running Gradient Descent by implementing the `gradientDescent.m` file which calls `computeCost` on every iteration. The final parameters are used to plot the linear fit (the blue line).
 
-![Plot](population_lin_fit.JPG)
+![Plot](4_population_lin_fit.JPG)
 
 Using this fit, we can predict profit values for population sizes of 35,000 and 70,000
 ```
@@ -173,7 +173,7 @@ surf(theta0_vals, theta1_vals, J_vals)
 xlabel('\theta_0'); ylabel('\theta_1');
 ```
 
-![plot](surface_plot.JPG)
+![plot](5_surface_plot.JPG)
 #### Contour Plot
 ```
 figure;
@@ -183,7 +183,7 @@ xlabel('\theta_0'); ylabel('\theta_1');
 hold on;
 plot(theta(1), theta(2), 'rx', 'MarkerSize', 10, 'LineWidth', 2);
 ```
-![PLOT](contour_plot.JPG)
+![PLOT](6_contour_plot.JPG)
 
 > The purpose of these graphs is to show you that how J(θ) varies with
 changes in θ0 and θ1. The cost function J(θ) is bowl-shaped and has a global
