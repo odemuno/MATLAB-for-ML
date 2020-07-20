@@ -7,7 +7,7 @@ I may include plots and tables, if necessary.
 
  Applications used:
  - MATLAB 
- - Octave (for a couple exercises)
+ - Octave
  - Microsoft Visual Studio Code
 
 ----------------------------

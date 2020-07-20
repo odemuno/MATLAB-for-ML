@@ -45,7 +45,7 @@ to next.
 
 The dataset is gotten from the `ex1data1.txt` file.
 
-To visualize, these are the first 6 dataset points:
+To visualize, these are the first 6 data points:
 ```
 6.1101,17.592
 5.5277,9.1302
@@ -54,7 +54,7 @@ To visualize, these are the first 6 dataset points:
 5.8598,6.8233
 8.3829,11.886
 ```
-This is the graph I got from the data set.
+This is the graph I got from the dataset.
 
 ![Plot](1_population.JPG)
 
@@ -138,7 +138,8 @@ Relevant scripts:
 - `computeCostMulti.m`
 - `gradientDescentMulti.m`
 
-The graph I got
+The graph I got:
+
 ![photo](7_gradient_descent_convergence.JPG)
 
 
@@ -148,7 +149,7 @@ Relevant scripts:
 - `ex1_multi.m`
 - `normalEqn.m`
 
-The closed-form solution to linear resgression is: ![photo](8_closedform_equation.JPG)
+The closed-form solution to linear resgression is:  ![photo](8_closedform_equation.JPG)
 
 Characteristics:
 - no feature scaling
