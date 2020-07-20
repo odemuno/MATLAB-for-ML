@@ -1,9 +1,8 @@
 # Programming Assignment #1 - Linear Regression ML
 
-This is my week 2 assignment solution for the [Machine Learning course](https://www.coursera.org/learn/machine-learning/home/welcome) by Stanford university on coursera. 
+ 
 
-Software:
-- MATLAB
+Week 2 Assignment.
 
 This assignment covers topics on:
 - Linear regression with one variable
@@ -11,7 +10,7 @@ This assignment covers topics on:
 - Cost Function
 - Gradient Descent
 - Contour plots and suface plots
-- Optional exercise: linear regression with multiple variables
+- Linear regression with multiple variables
 
 ### Provided Files
 - ex1.m - Octave/MATLAB script that steps you through the exercise
@@ -23,26 +22,8 @@ the exercise
 - computeCost.m - Function to compute the cost of linear regression
 - gradientDescent.m - Function to run gradient descent
 
-
-## 1: Basic Function
-
-Complete warmUpExercise.m
-- Make a 5X5 identity matrix
-```
-A = eye(5);
-```
-Output:
-```
-5x5 Identity Matrix: 
-
-ans =
-
-     1     0     0     0     0
-     0     1     0     0     0
-     0     0     1     0     0
-     0     0     0     1     0
-     0     0     0     0     1
-```
+## 1. Basic Function
+Re
 
 ## 2: Plotting
 Suppose you are the CEO of restaurant franchise and are considering different cities for opning a new branch.
