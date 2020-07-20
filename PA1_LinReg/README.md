@@ -112,6 +112,51 @@ Token: *my_token_number*
 ==                                             | 100 / 100 | 
 ```
 
+_________________________
+
+## Linear Regression with Multiple Variables (optional)
+I decided to complete this section for extra practice, and also so that I know how to work with multiple variables.
+
+> In this part, you will implement linear regression with multiple variables to predict the prices of houses. Suppose you are selling your house and you want to know what a good market price would be. One way to do this is to first collect information on recent houses sold and make a model of housing prices.
+
+The data is gotten from the `ex1data2.txt` file.
+### 1. Feature Normalization
+Relevant scripts:
+- `ex1_multi.m`
+- `featureNormalize.m`
+
+**Feature normalization** is a form of feature scaling when the features differ by various orders of magnitudes.
+
+Task:
+- Subtract the mean value of each feature from the dataset: use the `mean` function.
+- After subtracting the mean, additionally scale (divide) the feature values
+by their respective "standard deviations": use the `std` function.
+
+
+### 2. Gradient Descent
+Relevant scripts:
+- `computeCostMulti.m`
+- `gradientDescentMulti.m`
+
+The graph I got
+![photo](7_gradient_descent_convergence.JPG)
+
+
+Using a gradient descent algorithm, I was able to predict the price of a 1650 sqft, 3 bedroom house.
+### 3. Normal Equations
+Relevant scripts:
+- `ex1_multi.m`
+- `normalEqn.m`
+
+The closed-form solution to linear resgression is: ![photo](8_closedform_equation.JPG)
+
+Characteristics:
+- no feature scaling
+- exact solution in one calculation
+- no "loop until convergence" (compared to gradient descent)
+
+Using a normal equation algorithm, I was able to predict the price of a 1650 sqft, 3 bedroom house.
+
 ----------------------------
 ## References
 NOTE: I will not be posting any solutions that could be of aid to another student because that would violate the [Coursera Honor Code](https://learner.coursera.help/hc/en-us/articles/209818863-Coursera-Honor-Code).
