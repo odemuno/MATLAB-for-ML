@@ -23,12 +23,25 @@ the exercise
 - gradientDescent.m - Function to run gradient descent
 
 ## 1. Basic Function
-Re
+Practicing basic syntax like:
+```
+exp(A);     % exponential e
+abs(A);     % absolute value
+eye(n);     % nxn identity matrix
+sum(A);     % adds all values of the matrix together
+floor(A);    % rounds all values down
+ceil(A);     % rounds all values up
+pinv(A);     % pseudo-inverse of a matrix
+ones(r,c);     % rxc matrix of ones
+zeros(r,c);      % rxc matrix of zeros
+magic(n);       % nxn matrix where the colunms, rows and diagonals add up to the same thing    
+```
 
 ## 2: Plotting
-Suppose you are the CEO of restaurant franchise and are considering different cities for opning a new branch.
+> In this part of this exercise, you will implement linear regression with one
+variable to predict profits for a food truck. Suppose you are the CEO of a restaurant franchise and are considering different cities for opening a new outlet. The chain already has trucks in various cities and you have data for profits and populations from the cities. You would like to use this data to help you select which city to expand
+to next.
 
-You'd like to use the given data to help you select which city to expand to next.
 
 The dataset is gotten from the `ex1data1.txt` file.
 
@@ -41,16 +54,11 @@ To visualize, these are the first 6 dataset points:
 5.8598,6.8233
 8.3829,11.886
 ```
-
-```
-plot(x, y, 'rx', 'MarkerSize', 10);   % Plot the data
-xlabel('Population of City in 10,000s');  % The x-axis label
-ylabel('Profit in $10,000s');    % The y-axis label
-```
+This is the graph I got from the data set.
 ![Plot](1_population.JPG)
 
 ## 3: Cost and Gradient descent
-The objective of linear regression is to minimize the cost function:
+Linear regression minimizes the cost function:
 
 ![Plot](2_cost_function_equation.JPG)
 
@@ -58,106 +66,23 @@ In batch gradient descent, each iteration updates using this equation:
 
 ![Plot](3_GD_iteration_equation.JPG)
 
-This data is already setup for linear regression
-```
-X = [ones(m, 1), data(:,1)]; % Add a column of ones to x
-theta = zeros(2, 1); % initialize fitting parameters
-iterations = 1500;
-alpha = 0.01;
-```
-I edited the cost function code
-```
-function J = computeCost(X, y, theta)
-%COMPUTECOST Compute cost for linear regression
-%   J = COMPUTECOST(X, y, theta) computes the cost of using theta as the
-%   parameter for linear regression to fit the data points in X and y
+The data is already setup for linear regression and I tested the cost function J(θ) by completing the code in the `computeCost.m` file.
 
-% Initialize some useful values
-m = length(y); % number of training examples
-
-% You need to return the following variables correctly 
-J = 0;
-
-% ====================== YOUR CODE HERE ======================
-% Instructions: Compute the cost of a particular choice of theta
-%               You should set J to the cost.
-predictions = X*theta;
-sqrErrors = (predictions-y).^2;
-J = 1/(2*m) * sum(sqrErrors);
-
-
-
-% =========================================================================
-
-end
-```
-
-Testing the cost function J(θ) by completing the code in the `computeCost.m` file.
-```
-J = computeCost(X, y, theta);
-J = computeCost(X, y, [-1 ; 2]);
-```
-
-Results
-```
-Testing the cost function ...
-With theta = [0 ; 0]
-Cost computed = 32.072734
-Expected cost value (approx) 32.07
-
-With theta = [-1 ; 2]
-Cost computed = 54.242455
-Expected cost value (approx) 54.24
-```
-Running Gradient Descent by implementing the `gradientDescent.m` file which calls `computeCost` on every iteration. The final parameters are used to plot the linear fit (the blue line).
+I ran  Gradient Descent by implementing the `gradientDescent.m` file which calls `computeCost` on every iteration. The final parameters are used to plot the linear fit (the blue line).
 
 ![Plot](4_population_lin_fit.JPG)
 
-Using this fit, we can predict profit values for population sizes of 35,000 and 70,000
-```
-For population = 35,000, we predict a profit of 4519.767868
-For population = 70,000, we predict a profit of 45342.450129
-```
+Using the fit, I was able to predict profit values for population sizes of 35,000 and 70,000.
 
-## 4: Visualizing J(θ_0, θ_1)
+## 4: Visualizing J(θ0, θ1)
 Using the `ex1.m` file -- the information needed to create the plots were given.
 
-- plot the cost over a 2D grid of θ_0 and θ_1 values
-- uses the `computeCost` function to calculate J(θ) over a grid of values
-```
-% Grid over which we will calculate J
-theta0_vals = linspace(-10, 10, 100);
-theta1_vals = linspace(-1, 4, 100);
+I plotted the cost over a 2D grid of θ0 and θ1 values and used the `computeCost` function to calculate J(θ) over a grid of values used to produce a surface and contour plot.
 
-% initialize J_vals to a matrix of 0's
-J_vals = zeros(length(theta0_vals), length(theta1_vals));
-
-% Fill out J_vals
-for i = 1:length(theta0_vals)
-    for j = 1:length(theta1_vals)
-	  t = [theta0_vals(i); theta1_vals(j)];
-	  J_vals(i,j) = computeCost(X, y, t);
-    end
-end
-```
-The values are used to produce a surface and contour plot:
 #### Surface Plot
-```
-figure;
-surf(theta0_vals, theta1_vals, J_vals)
-xlabel('\theta_0'); ylabel('\theta_1');
-```
-
 ![plot](5_surface_plot.JPG)
 #### Contour Plot
-```
-figure;
-% Plot J_vals as 15 contours spaced logarithmically between 0.01 and 100
-contour(theta0_vals, theta1_vals, J_vals, logspace(-2, 3, 20))
-xlabel('\theta_0'); ylabel('\theta_1');
-hold on;
-plot(theta(1), theta(2), 'rx', 'MarkerSize', 10, 'LineWidth', 2);
-```
+
 ![PLOT](6_contour_plot.JPG)
 
 > The purpose of these graphs is to show you that how J(θ) varies with
@@ -167,7 +92,7 @@ plot). This minimum is the optimal point for θ0 and θ1, and each step of
 gradient descent moves closer to this point.
 
 ## My Submission Confirmation
-Run the `submit` function to connect to the `submit.m` file.
+I ran the `submit` function to connect to the `submit.m` file.
 ```
 == Submitting solutions | Linear Regression with Multiple Variables...
 Login (email address): *my_email_address*
@@ -185,3 +110,16 @@ Token: *my_token_number*
 ==                                   --------------------------------
 ==                                             | 100 / 100 | 
 ```
+
+----------------------------
+## References
+NOTE: I will not be posting any solutions that could be of aid to another student because that would violate the [Coursera Honor Code](https://learner.coursera.help/hc/en-us/articles/209818863-Coursera-Honor-Code).
+
+> You may not share your solutions to homework, quizzes, or exams with anyone else unless explicitly permitted by the instructor. This includes anything written by you, as well as any official solutions provided by the course staff.
+
+> You may not engage in any other activities that will dishonestly improve your results or dishonestly improve or damage the results of others.
+
+Also, since this work is directly related to the [Machine Learning Coursera course](https://www.coursera.org/learn/machine-learning/home/welcome), most of the information I reflect upon is gotten directly from it.
+
+
+If you believe any content posted infringes upon the Coursera Honor Code, please let me know. Thank you.

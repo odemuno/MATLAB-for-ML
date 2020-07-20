@@ -10,67 +10,24 @@ Relevant scripts:
 - `ex1_multi.m`
 - `featureNormalize.m`
 
-Feature normalization is a form of feature scaling when the features differ by various orders of magnitudes.
+**Feature normalization** is a form of feature scaling when the features differ by various orders of magnitudes.
 
 Task:
 - Subtract the mean value of each feature from the dataset: use the `mean` function.
 - After subtracting the mean, additionally scale (divide) the feature values
 by their respective "standard deviations": use the `std` function.
 
-Normalize the features by calling this function:
-```
-[X mu sigma] = featureNormalize(X);
-```
-
-Edit the `featureNormalize.m` file:
-```
-mu = mean(X);
-sigma = std(X);
-
-for i=1:size(X,2)
-    X_norm(:,i) = (X_norm(:,i) - mu(i)) / sigma(i);
-end
-```
 
 ### 2. Gradient Descent
 Relevant scripts:
 - `computeCostMulti.m`
 - `gradientDescentMulti.m`
 
-```
-% Init Theta and Run Gradient Descent 
-theta = zeros(3, 1);
-[theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters);
-
-% Plot the convergence graph
-figure;
-plot(1:numel(J_history), J_history, '-b', 'LineWidth', 2);
-xlabel('Number of iterations');
-ylabel('Cost J');
-
-% Display gradient descent's result
-fprintf('Theta computed from gradient descent: \n');
-fprintf(' %f \n', theta);
-fprintf('\n');
-```
-
+The graph I got
 ![photo](1_gradient_descent_convergence.JPG)
 
 
-Calculations:
-Predict the price of a 1650 sqft(x1), 3 bedrom (x2) house using gradient descent
-```
-norm_price = ([1650 3]- mu) ./ sigma;
-norm_price = [1 norm_price];
-price = norm_price* theta;
-```
-
-Result:
-```
-Predicted price of a 1650 sq-ft, 3 br house (using gradient descent):
- $289314.620338
- ```
-
+Using a gradient descent algorithm, I was able to predict the price of a 1650 sqft, 3 bedroom house.
 ### 3. Normal Equations
 Relevant scripts:
 - `ex1_multi.m`
@@ -83,20 +40,17 @@ Characteristics:
 - exact solution in one calculation
 - no "loop until convergence" (compared to gradient descent)
 
-In the `normalEqn.m` filr:
-I added this code to do the computation:
-```
-theta = pinv(X'*X)*X'*y;
-```
+Using a normal equation algorithm, I was able to predict the price of a 1650 sqft, 3 bedroom house.
 
-Calculations:
-Predict the price of a 1650 sqft(x1), 3 bedrom (x2) house using normal equation
-```
-price = [1,1650, 3]*theta;
-```
+----------------------------
+## References
+NOTE: I will not be posting any solutions that could be of aid to another student because that would violate the [Coursera Honor Code](https://learner.coursera.help/hc/en-us/articles/209818863-Coursera-Honor-Code).
 
-Result:
-```
-Predicted price of a 1650 sq-ft, 3 br house (using normal equations):
- $293081.464335
- ```
+> You may not share your solutions to homework, quizzes, or exams with anyone else unless explicitly permitted by the instructor. This includes anything written by you, as well as any official solutions provided by the course staff.
+
+> You may not engage in any other activities that will dishonestly improve your results or dishonestly improve or damage the results of others.
+
+Also, since this work is directly related to the [Machine Learning Coursera course](https://www.coursera.org/learn/machine-learning/home/welcome), most of the information I reflect upon is gotten directly from it.
+
+
+If you believe any content posted infringes upon the Coursera Honor Code, please let me know. Thank you.
