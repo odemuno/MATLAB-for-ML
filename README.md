@@ -19,6 +19,3 @@ NOTE: I will not be posting any solutions that could be of aid to another studen
 > You may not engage in any other activities that will dishonestly improve your results or dishonestly improve or damage the results of others.
 
 Also, since this work is directly related to the [Machine Learning Coursera course](https://www.coursera.org/learn/machine-learning/home/welcome), most of the information I reflect upon is gotten directly from it.
-
-
-If you believe any content posted infringes upon the Coursera Honor Code, please let me know. Thank you.

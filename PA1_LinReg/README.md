@@ -32,9 +32,9 @@ sum(A);     % adds all values of the matrix together
 floor(A);    % rounds all values down
 ceil(A);     % rounds all values up
 pinv(A);     % pseudo-inverse of a matrix
-ones(r,c);     % rxc matrix of ones
-zeros(r,c);      % rxc matrix of zeros
-magic(n);       % nxn matrix where the colunms, rows and diagonals add up to the same thing    
+ones(r,c);   % rxc matrix of ones
+zeros(r,c);   % rxc matrix of zeros
+magic(n);     % nxn matrix where the colunms, rows and diagonals add up to the same thing    
 ```
 
 ## 2: Plotting
@@ -55,6 +55,7 @@ To visualize, these are the first 6 dataset points:
 8.3829,11.886
 ```
 This is the graph I got from the data set.
+
 ![Plot](1_population.JPG)
 
 ## 3: Cost and Gradient descent
@@ -120,6 +121,3 @@ NOTE: I will not be posting any solutions that could be of aid to another studen
 > You may not engage in any other activities that will dishonestly improve your results or dishonestly improve or damage the results of others.
 
 Also, since this work is directly related to the [Machine Learning Coursera course](https://www.coursera.org/learn/machine-learning/home/welcome), most of the information I reflect upon is gotten directly from it.
-
-
-If you believe any content posted infringes upon the Coursera Honor Code, please let me know. Thank you.
