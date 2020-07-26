@@ -10,6 +10,15 @@ I may include plots and tables, if necessary.
  - Octave
  - Microsoft Visual Studio Code
 
+### Programming Exercises
+1. Linear Regression
+    - Cost Function and Gradient Descent
+    - Surface and contour plots
+2. Logistic Regression
+    - Sigmoid function
+    - Cost Function and Gradient
+    - Optimization using fminunc
+
 ----------------------------
 ## References
 NOTE: I will not be posting any solutions that could be of aid to another student because that would violate the [Coursera Honor Code](https://learner.coursera.help/hc/en-us/articles/209818863-Coursera-Honor-Code).
