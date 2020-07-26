@@ -56,22 +56,22 @@ To visualize, these are the first 6 data points:
 ```
 This is the graph I got from the dataset.
 
-![Plot](1_population.JPG)
+![Plot](images\1_population.JPG)
 
 ## 3: Cost and Gradient descent
 Linear regression minimizes the cost function:
 
-![Plot](2_cost_function_equation.JPG)
+![Plot](images\2_cost_function_equation.JPG)
 
 In batch gradient descent, each iteration updates using this equation:
 
-![Plot](3_GD_iteration_equation.JPG)
+![Plot](images\3_GD_iteration_equation.JPG)
 
 The data is already setup for linear regression and I tested the cost function J(θ) by completing the code in the `computeCost.m` file.
 
 I ran  Gradient Descent by implementing the `gradientDescent.m` file which calls `computeCost` on every iteration. The final parameters are used to plot the linear fit (the blue line).
 
-![Plot](4_population_lin_fit.JPG)
+![Plot](images\4_population_lin_fit.JPG)
 
 Using the fit, I was able to predict profit values for population sizes of 35,000 and 70,000.
 
@@ -81,10 +81,10 @@ Using the `ex1.m` file -- the information needed to create the plots were given.
 I plotted the cost over a 2D grid of θ0 and θ1 values and used the `computeCost` function to calculate J(θ) over a grid of values used to produce a surface and contour plot.
 
 #### Surface Plot
-![plot](5_surface_plot.JPG)
+![plot](images\5_surface_plot.JPG)
 #### Contour Plot
 
-![PLOT](6_contour_plot.JPG)
+![PLOT](images\6_contour_plot.JPG)
 
 > The purpose of these graphs is to show you that how J(θ) varies with
 changes in θ0 and θ1. The cost function J(θ) is bowl-shaped and has a global
@@ -140,7 +140,7 @@ Relevant scripts:
 
 The graph I got:
 
-![photo](7_gradient_descent_convergence.JPG)
+![photo](images\7_gradient_descent_convergence.JPG)
 
 
 Using a gradient descent algorithm, I was able to predict the price of a 1650 sqft, 3 bedroom house.
@@ -149,7 +149,7 @@ Relevant scripts:
 - `ex1_multi.m`
 - `normalEqn.m`
 
-The closed-form solution to linear resgression is:  ![photo](8_closedform_equation.JPG)
+The closed-form solution to linear resgression is:  ![photo](images\8_closedform_equation.JPG)
 
 Characteristics:
 - no feature scaling

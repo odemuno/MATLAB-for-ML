@@ -30,22 +30,22 @@ The first two columns (x1 and x2) are the exam scores while the last column (y) 
 
 *Note: For the plotted graph below, + indicates (y = 1) and o indicates (y = 0)*
 
-![graph](1_ExamPlot.JPG)
+![graph](images\1_ExamPlot.JPG)
 
 Refer to [fplot](https://www.mathworks.com/help/matlab/ref/fplot.html) for name-value pair arguments when plotting -- LineWidth, MarkerFaceColor, etc.
 
 ## 2. Compute Cost and Gradient
 **Important equations**
 - Logistic regression hypothesis: 
-![equation](2_LogRegHypothesis.JPG)
+![equation](images\2_LogRegHypothesis.JPG)
 - Sigmoid function or logistic function: 
-![equation](3_SigmoidFunction.JPG)
+![equation](images\3_SigmoidFunction.JPG)
 - Sigmoid graph
-![graph](4_SigmoidGraph.JPG)
+![graph](images\4_SigmoidGraph.JPG)
 - Cost Function for Logistic Regression: 
-![equation](5_CostFuncLogReg.JPG)
+![equation](images\5_CostFuncLogReg.JPG)
 - Gradient for Logistic Regression: 
-![equation](6_GradientLogReg.JPG)
+![equation](images\6_GradientLogReg.JPG)
 
 *Note that this is similar to linear regression but for a different hypothesis*
  
@@ -75,7 +75,7 @@ Refer to [fplot](https://www.mathworks.com/help/matlab/ref/fplot.html) for name-
 - More complex
 
 The plot of the decision boundary (blue linear line):
-![plot](7_DecisionBoundary.JPG)
+![plot](images\7_DecisionBoundary.JPG)
 
 ## 4. Prediction and Accuracies
 > Use the logistic regression model to predict the probability that a student with score 45 on exam 1 and score 85 on exam 2 will be admitted.
@@ -103,7 +103,7 @@ Before using MATLAB, I want to manually predict the probability.
 6. Use z as the input to the function on desmos; the output is the probability of admission (y=1)
    -  z = 1.194; probability = 0.7673
 
-![desmos](8_PredictPlot.JPG)
+![desmos](images\8_PredictPlot.JPG)
 
 #### Probability Calculation using MATLAB code
 Just run this code and that's it! 
@@ -116,19 +116,19 @@ prob = sigmoid([1 45 85] * theta)
 > Predict whether microchips from a fabrication plant passes quality assurance (QA). During QA, each microchip goes through various tests to ensure it is functioning correctly.
 
 The plot of the data:
-![plot](9_RegDataPlot.JPG)
+![plot](images\9_RegDataPlot.JPG)
 
 You cannot seperate a plot like this into positive or nedative like done earlier.
 
 **Important Equations**
 - Regularized cost function:
-![equation](10_RegCostFunc.JPG)
+![equation](images\10_RegCostFunc.JPG)
 - Regularized Gradient:
-![equation](11_RegGradient.JPG)
-![equation](11b_RegGradient.JPG)
+![equation](images\11_RegGradient.JPG)
+![equation](images\11b_RegGradient.JPG)
 
 The plot with the decision boundary: 
-![plot](12_RegDecisionBoundary.JPG)
+![plot](images\12_RegDecisionBoundary.JPG)
 
 ## My Submission Confirmation
 I ran the `submit` function to connect to the `submit.m` file.
