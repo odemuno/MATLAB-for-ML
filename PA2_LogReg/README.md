@@ -28,18 +28,18 @@ The first two columns (x1 and x2) are the exam scores while the last column (y) 
 
 *Note: For the plotted graph below, + indicates (y = 1) and o indicates (y = 0)*
 
-![graph](1_ExamPlot.jpg)
+![graph](1_ExamPlot.JPG)
 
 Refer to [fplot](https://www.mathworks.com/help/matlab/ref/fplot.html) for name-value pair arguments when plotting -- LineWidth, MarkerFaceColor, etc.
 
 ## 2. Compute Cost and Gradient
 **Important equations**
-- Logistic regression hypothesis: ![equation](2_LogRegHypothesis.jpg)
-- Sigmoid function: ![equation](3_SigmoidFunction.jpg)
+- Logistic regression hypothesis: ![equation](2_LogRegHypothesis.JPG)
+- Sigmoid function: ![equation](3_SigmoidFunction.JPG)
 - Sigmoid graph
-![graph](4_SigmoidGraph.jpg)
-- Cost Function for Logistic Regression: ![equation](5_CostFuncLogReg.jpg)
-- Gradient for Logistic Regression: ![equation](6_GradientLogReg.jpg)
+![graph](4_SigmoidGraph.JPG)
+- Cost Function for Logistic Regression: ![equation](5_CostFuncLogReg.JPG)
+- Gradient for Logistic Regression: ![equation](6_GradientLogReg.JPG)
 *Note that this is similar to linear regression but for a different hypothesis*
  
 
