@@ -148,4 +148,15 @@ Use token from last successful submission (*my_email_address*)? (Y/n): Y
 ==                                             | 100 / 100 |
 ```
 
-_________________________
+
+----------------------------
+## References
+NOTE: On this page, I only included the end-result (plots) and the equations I used in each section. This git documentation is solely for reflection of the overall process and concepts, not solutions. 
+
+I did not post any solutions that could be of aid to another student because that would violate the [Coursera Honor Code](https://learner.coursera.help/hc/en-us/articles/209818863-Coursera-Honor-Code). 
+
+> You may not share your solutions to homework, quizzes, or exams with anyone else unless explicitly permitted by the instructor. This includes anything written by you, as well as any official solutions provided by the course staff.
+
+> You may not engage in any other activities that will dishonestly improve your results or dishonestly improve or damage the results of others.
+
+Also, since this work is directly related to the [Machine Learning Coursera course](https://www.coursera.org/learn/machine-learning/home/welcome), most of the information I reflect upon is gotten directly from it.
