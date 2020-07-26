@@ -18,6 +18,10 @@ I may include plots and tables, if necessary.
     - Sigmoid function
     - Cost Function and Gradient
     - Optimization using fminunc
+    - Probability and accuracy
+    - Regularized Logistic Regression
+    - Decision boundary
+
 
 ----------------------------
 ## References
