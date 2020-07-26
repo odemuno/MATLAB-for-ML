@@ -56,7 +56,7 @@ To visualize, these are the first 6 data points:
 ```
 This is the graph I got from the dataset.
 
-![Plot](images\1_population.JPG)
+![Plot](images/1_population.JPG)
 
 ## 3: Cost and Gradient descent
 Linear regression minimizes the cost function:
