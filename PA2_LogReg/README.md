@@ -1,12 +1,14 @@
-# Programming Assignment #2 - Logistic Regression ML
+# Programming Assignment #2 - Logistic Regression
 
 Week 3 Assignment.
 
 This assignment covers topics on:
 - Logistic regression
-
-### Provided Files
-- ?
+- Sigmoid function
+- Cost Function and Gradient
+- Optimization using fminunc
+- Probability and accuracy
+- Regularized Logistic Regression
 
 ## Logistic Regression
 ## 1. Plotting
@@ -14,7 +16,7 @@ This assignment covers topics on:
 
 **Training set**: historical data from previous students: 2 exam scores and admission decision
 
-The dataset is gotten from the `ex2data1.txt` file.
+The dataset is gotten from the given `ex2data1.txt` file.
 
 To visualize, these are the first 5 data points:
 ```
@@ -34,15 +36,116 @@ Refer to [fplot](https://www.mathworks.com/help/matlab/ref/fplot.html) for name-
 
 ## 2. Compute Cost and Gradient
 **Important equations**
-- Logistic regression hypothesis: ![equation](2_LogRegHypothesis.JPG)
-- Sigmoid function: ![equation](3_SigmoidFunction.JPG)
+- Logistic regression hypothesis: 
+![equation](2_LogRegHypothesis.JPG)
+- Sigmoid function or logistic function: 
+![equation](3_SigmoidFunction.JPG)
 - Sigmoid graph
 ![graph](4_SigmoidGraph.JPG)
-- Cost Function for Logistic Regression: ![equation](5_CostFuncLogReg.JPG)
-- Gradient for Logistic Regression: ![equation](6_GradientLogReg.JPG)
+- Cost Function for Logistic Regression: 
+![equation](5_CostFuncLogReg.JPG)
+- Gradient for Logistic Regression: 
+![equation](6_GradientLogReg.JPG)
+
 *Note that this is similar to linear regression but for a different hypothesis*
  
+**MATLAB functions used**
+| Function | Description |
+| --- | --- |
+| `[M,N] = size(X)` | for matrix X, returns the number of rows and columns in X as separate output variables, M rows and N columns|
+| `D = size(X)` | for M-by-N matrix X, returns the two-element row vector. For example, If X is a scalar, which MATLAB regards as a 1-by-1 array, size(X) returns the vector [1 1]|
+| `length(X)` | Length of vector; it is the longest dimension (either row or column) |
+| `log` | The natural logarithm of the elements of X |
 
-## 3. Optimizing using fminunc
+*These descriptions are gotten from the MATLAB documentation.*
 
-## 4. 
+## 3. Advanced Optimization using fminunc
+> Use `fminunc` instead of taking gradient descent steps. It is a MATLAB/Octave optimization solver that finds the minimum of an unconstrained function.
+
+**Function inputs:** 
+- initial parameter values
+- function to compute cost and gradient 
+
+**Function benefits:**
+- No need to write loops
+- No need to set a learning rate, α
+- Often faster than gradient descent
+
+**Function disadvantage:**
+- More complex
+
+The plot of the decision boundary (blue linear line):
+![plot](7_DecisionBoundary.JPG)
+
+## 4. Prediction and Accuracies
+> Use the logistic regression model to predict the probability that a student with score 45 on exam 1 and score 85 on exam 2 will be admitted.
+
+#### Manual Calculation of Probability
+Before using MATLAB, I want to manually predict the probability. 
+(NOTE: this was not part of what I had to do for this homework. Not a solution to any question.)
+
+1. know that the hypothesis is given by h<sub>θ</sub>(x) = 1/(1+e^(-z))
+    - put this hypothesis equation into [desmos calculator](https://www.desmos.com/calculator)
+
+2. the decision boundary equation is given by h<sub>θ</sub>(x) = g(θ<sub>0</sub> + θ<sub>1</sub>x<sub>1</sub> + θ<sub>2</sub>x<sub>2</sub>)
+3. the values of θ are fotten from the `fminunc` theta values that I got
+```
+ -25.161343 
+ 0.206232 
+ 0.201472 
+```
+4. the x values are the exam scores and 1 as the defailt for x<sub>0</sub>
+```
+[1 45 85]
+```
+5. The  product between both vectors θ and x gives: 1.194 = θ<sup>T</sup>x = z
+
+6. Use z as the input to the function on desmos; the output is the probability of admission (y=1)
+   -  z = 1.194; probability = 0.7673
+
+![desmos](8_PredictPlot.JPG)
+
+#### Probability Calculation using MATLAB code
+Just run this code and that's it! 
+*Note: This code was already provided.*
+```
+prob = sigmoid([1 45 85] * theta)
+```
+
+## 5. Regularized Logistic Regression
+> Predict whether microchips from a fabrication plant passes quality assurance (QA). During QA, each microchip goes through various tests to ensure it is functioning correctly.
+
+The plot of the data:
+![plot](9_RegDataPlot.JPG)
+
+You cannot seperate a plot like this into positive or nedative like done earlier.
+
+**Important Equations**
+- Regularized cost function:
+![equation](10_RegCostFunc.JPG)
+- Regularized Gradient:
+![equation](11_RegGradient.JPG)
+![equation](11b_RegGradient.JPG)
+
+The plot with the decision boundary: 
+![plot](12_RegDecisionBoundary.JPG)
+
+## My Submission Confirmation
+I ran the `submit` function to connect to the `submit.m` file.
+```
+== Submitting solutions | Logistic Regression...
+Use token from last successful submission (*my_email_address*)? (Y/n): Y
+== 
+==                                   Part Name |     Score | Feedback
+==                                   --------- |     ----- | --------
+==                            Sigmoid Function |   5 /   5 | Nice work!
+==                    Logistic Regression Cost |  30 /  30 | Nice work!
+==                Logistic Regression Gradient |  30 /  30 | Nice work!
+==                                     Predict |   5 /   5 | Nice work!
+==        Regularized Logistic Regression Cost |  15 /  15 | Nice work!
+==    Regularized Logistic Regression Gradient |  15 /  15 | Nice work!
+==                                   --------------------------------
+==                                             | 100 / 100 |
+```
+
+_________________________
