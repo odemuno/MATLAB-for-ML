@@ -6,7 +6,6 @@ This assignment covers topics on:
 - Multi-class classification
 - Logistic Regression cost function and gradient (unregularized vs regularized)
 - Neural networks
-- 
 
 ## Part 1: Multi-class Classification: one-vs-all
 **Goal**: Use logistic regression and neural networks to recognize handwritten digits (0-9).
@@ -29,7 +28,7 @@ For this section, it is important to know the difference between vectorized regu
 ![image](images/5_RegG.JPG)
 
 ## 2b. One-vs-All Training
-> Implement one-vs-all classication by
+> Implement one-vs-all classification by
 training multiple regularized logistic regression classifiers, one for each of
 the K classes in our datase -- (K=10 for the handwritten digits dataset)
 
@@ -46,14 +45,16 @@ In this section, I would be predicting the digit in each image by computing the 
 
 
 ## Part 2: Neural Networks
-> In the previous part of this exercise, you implemented multi-class logistic regression to recognize handwritten digits. However, logistic regression cannot form more complex hypotheses as it is only a linear classier. The neural network will be able to represent complex models that form non-linear hypotheses.
+> In the previous part of this exercise, you implemented multi-class logistic regression to recognize handwritten digits. However, logistic regression cannot form more complex hypotheses as it is only a linear classifier. The neural network will be able to represent complex models that form non-linear hypotheses.
 
 The neural net model:
+
 ![photo](images/6_NeuNet.JPG)
 
 **Feedforward propagation**: computes h<sub>θ</sub>(x<sup>(i)</sup>) for every example i and returns the associated predictions.
 
 Output example that I got:
+
 ![image](images/7_Prediction1.JPG)
 
 ![image](images/8_Prediction2.JPG)
