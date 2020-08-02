@@ -21,6 +21,10 @@ I may include plots and tables, if necessary.
     - Probability and accuracy
     - Regularized Logistic Regression
     - Decision boundary
+3. Neural Networks
+    - Multi-class classification
+    - Logistic Regression cost function and gradient (unregularized vs regularized)
+    - Feedforward propagation
 
 
 ----------------------------
